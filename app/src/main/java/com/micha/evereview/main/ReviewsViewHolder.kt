@@ -8,7 +8,7 @@ class ReviewsViewHolder(
     private val layout: ItemReviewBinding
 ) : RecyclerView.ViewHolder(layout.root) {
     fun fill(review: Review) {
-        layout.description.text = review.description
-        layout.title.text = review.item.title
+        layout.description.text = review.text
+        layout.title.text = review.itemTitle
     }
 }
