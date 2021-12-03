@@ -14,7 +14,8 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(), MainContract.View {
     private val layout by lazy {ActivityMainBinding.inflate(layoutInflater)}
-    @Inject lateinit var presenter: MainContract.Presenter
+    @Inject
+    lateinit var presenter: MainContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,13 +24,11 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         layout.reviews.layoutManager = LinearLayoutManager(this)
         layout.reviews.adapter = presenter.reviewsAdapter
     }
-}
 
-@Module
-@InstallIn(SingletonComponent::class)
-object MainActivityModule {
-    @Provides
-    fun provideMainActivity(): MainActivity {
-        return MainActivity()
+    @Module
+    @InstallIn(SingletonComponent::class)
+    object HiltModule {
+        @Provides
+        fun provideMainActivity() = MainActivity()
     }
 }
