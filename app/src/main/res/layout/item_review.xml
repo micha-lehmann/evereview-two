@@ -3,25 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/space_m">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/space_m">
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
+        <HorizontalScrollView
+            android:id="@+id/titleWrapper"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/font_xxl"
-            app:layout_constraintHorizontal_bias="0"
+            android:requiresFadingEdge="horizontal"
+            android:scrollbars="none"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            app:layout_constraintTop_toTopOf="parent"
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_xxl"
 
-            tools:text="Review Title" />
+                tools:text="Review Title" />
+        </HorizontalScrollView>
 
         <TextView
             android:id="@+id/description"
@@ -33,7 +40,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
 
-            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/titleWrapper"
 
             tools:text="Review Description, which might be so long is has to wrap over to the next line" />
     </androidx.constraintlayout.widget.ConstraintLayout>
