@@ -15,4 +15,8 @@ class MainPresenter @Inject constructor(
     override fun addReviews(reviews: Iterable<Review>) = reviewsAdapter.addReviews(reviews)
 
     override fun removeReview(review: Review) = reviewsAdapter.removeReview(review)
+
+    override fun onViewCreated() {
+        addReviews(repo.getReviews())
+    }
 }

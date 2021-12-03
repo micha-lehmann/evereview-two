@@ -13,5 +13,7 @@ interface MainContract {
         fun addReviews(reviews: Iterable<Review>)
 
         fun removeReview(review: Review)
+
+        fun onViewCreated()
     }
 }
