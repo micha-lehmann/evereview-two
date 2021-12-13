@@ -17,4 +17,7 @@
     <dimen name="font_xl">20sp</dimen>
     <dimen name="font_xxl">24sp</dimen>
     <dimen name="font_xxxl">32sp</dimen>
+
+    <dimen name="space_fab_margin">16dp</dimen>
+    <dimen name="space_fab_icon">24dp</dimen>
 </resources>
