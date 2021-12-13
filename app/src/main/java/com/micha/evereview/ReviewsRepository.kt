@@ -11,23 +11,17 @@ class ReviewsRepository @Inject constructor() {
             Review(
                 "Avengers",
                 8,
-                "Pretty good.",
-                emptyMap(),
-                emptyMap()
+                "Pretty good."
             ),
             Review(
                 "The Incredible Hulk",
                 3,
-                "What an abomination... get it?",
-                emptyMap(),
-                emptyMap()
+                "What an abomination... get it?"
             ),
             Review(
                 "Die Eiskönigin: Völlig Unverfroren (Frozen)",
                 6,
-                "Actually not that bad tbh.",
-                emptyMap(),
-                emptyMap()
+                "Actually not that bad tbh."
             )
         )
     }
