@@ -1,13 +1,17 @@
 package com.micha.evereview
 
 import com.micha.evereview.models.Review
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class ReviewsRepository @Inject constructor() {
-    fun getReviews(): List<Review> {
-        return listOf(
+class ReviewsRepository @Inject constructor(
+    private val reviewsDao: ReviewsDao
+) {
+    fun getReviews(): List<Review> = runBlocking(Dispatchers.IO) {
+        reviewsDao.getAll() + listOf(
             Review(
                 "Avengers",
                 8,
