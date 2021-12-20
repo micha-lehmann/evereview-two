@@ -6,9 +6,9 @@ import java.io.Serializable
 
 @Entity(tableName = "reviews")
 data class Review(
-    val itemTitle: String,
-    val rating: Int,
-    val text: String,
+    val itemTitle: String = "",
+    val rating: Int = 0,
+    val text: String = "",
     val itemMetadata: Map<String, Serializable> = emptyMap(),
     val metadata: Map<String, Serializable> = emptyMap(),
 
