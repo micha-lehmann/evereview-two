@@ -9,6 +9,6 @@ class ReviewsViewHolder(
 ) : RecyclerView.ViewHolder(layout.root) {
     fun fill(review: Review) {
         layout.description.text = review.text
-        layout.title.text = review.itemTitle
+        layout.title.text = review.item.title
     }
 }

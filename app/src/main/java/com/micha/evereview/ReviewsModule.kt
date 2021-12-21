@@ -21,7 +21,9 @@ object ReviewsModule {
         return Room.databaseBuilder(
             context,
             ReviewsDatabase::class.java, "review"
-        ).build()
+        )
+            .fallbackToDestructiveMigration()
+            .build()
     }
 
     @Singleton

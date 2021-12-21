@@ -2,6 +2,7 @@ package com.micha.evereview.main
 
 import com.micha.evereview.ReviewsRepository
 import com.micha.evereview.models.Review
+import com.micha.evereview.models.ReviewItem
 import javax.inject.Inject
 
 class MainPresenter @Inject constructor(
@@ -17,6 +18,6 @@ class MainPresenter @Inject constructor(
     override fun editReview(review: Review) = repo.edit(review)
 
     override fun onAddPressed() {
-        addReview(Review("Test", 10, "This is a test"))
+        addReview(Review(100, "This is a test", mapOf(), ReviewItem("Test")))
     }
 }

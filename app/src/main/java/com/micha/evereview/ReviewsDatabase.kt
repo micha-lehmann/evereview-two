@@ -8,7 +8,7 @@ import com.micha.evereview.util.Converters
 import kotlinx.serialization.ExperimentalSerializationApi
 
 @ExperimentalSerializationApi
-@Database(entities = [Review::class], version = 1)
+@Database(entities = [Review::class], version = 3)
 @TypeConverters(Converters::class)
 abstract class ReviewsDatabase : RoomDatabase() {
     abstract fun reviewsDao(): ReviewsDao

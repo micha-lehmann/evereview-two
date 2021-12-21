@@ -1,0 +1,64 @@
+{
+    "formatVersion": 1,
+    "database": {
+        "version": 3,
+        "identityHash": "8dfa015cc68487d65c53772c512bd6ac",
+        "entities": [
+            {
+                "tableName": "reviews",
+                "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`rating` INTEGER NOT NULL, `text` TEXT NOT NULL, `metadata` BLOB NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `item_title` TEXT NOT NULL, `item_metadata` BLOB NOT NULL)",
+                "fields": [
+                    {
+                        "fieldPath": "rating",
+                        "columnName": "rating",
+                        "affinity": "INTEGER",
+                        "notNull": true
+                    },
+                    {
+                        "fieldPath": "text",
+                        "columnName": "text",
+                        "affinity": "TEXT",
+                        "notNull": true
+                    },
+                    {
+                        "fieldPath": "metadata",
+                        "columnName": "metadata",
+                        "affinity": "BLOB",
+                        "notNull": true
+                    },
+                    {
+                        "fieldPath": "id",
+                        "columnName": "id",
+                        "affinity": "INTEGER",
+                        "notNull": true
+                    },
+                    {
+                        "fieldPath": "item.title",
+                        "columnName": "item_title",
+                        "affinity": "TEXT",
+                        "notNull": true
+                    },
+                    {
+                        "fieldPath": "item.metadata",
+                        "columnName": "item_metadata",
+                        "affinity": "BLOB",
+                        "notNull": true
+                    }
+                ],
+                "primaryKey": {
+                    "columnNames": [
+                        "id"
+                    ],
+                    "autoGenerate": true
+                },
+                "indices": [],
+                "foreignKeys": []
+            }
+        ],
+        "views": [],
+        "setupQueries": [
+            "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+            "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8dfa015cc68487d65c53772c512bd6ac')"
+        ]
+    }
+}
