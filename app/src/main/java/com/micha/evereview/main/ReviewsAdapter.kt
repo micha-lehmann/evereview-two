@@ -12,7 +12,7 @@ import com.micha.evereview.models.Review
 class ReviewsAdapter(
     private val data: LiveData<List<Review>>
 ) : RecyclerView.Adapter<ReviewsViewHolder>() {
-    private val reviews get() = data.value ?: emptyList()
+    private val reviews get() = data.value?.asReversed() ?: emptyList()
 
     init {
         data.observeForever {
