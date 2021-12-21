@@ -8,13 +8,13 @@ class MainPresenter @Inject constructor(
     private val view: MainContract.View,
     private val repo: ReviewsRepository
 ) : MainContract.Presenter {
-    override val reviewsAdapter = ReviewsAdapter()
+    override val reviewsAdapter = ReviewsAdapter(repo.getLive())
 
-    override fun addReview(review: Review) = reviewsAdapter.addReview(review)
+    override fun addReview(review: Review) = repo.add(review)
 
-    override fun addReviews(reviews: Iterable<Review>) = reviewsAdapter.addReviews(reviews)
+    override fun removeReview(review: Review) = repo.remove(review)
 
-    override fun removeReview(review: Review) = reviewsAdapter.removeReview(review)
+    override fun editReview(review: Review) = repo.edit(review)
 
     override fun onAddPressed() {
         addReview(Review("Test", 10, "This is a test"))
