@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         layout.reviews.layoutManager = LinearLayoutManager(this)
         layout.reviews.adapter = presenter.reviewsAdapter
 
-        presenter.onViewCreated()
+        layout.add.setOnClickListener { presenter.onAddPressed() }
     }
 
     @Module

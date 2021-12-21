@@ -16,7 +16,7 @@ class MainPresenter @Inject constructor(
 
     override fun removeReview(review: Review) = reviewsAdapter.removeReview(review)
 
-    override fun onViewCreated() {
-        addReviews(repo.getReviews())
+    override fun onAddPressed() {
+        addReview(Review("Test", 10, "This is a test"))
     }
 }

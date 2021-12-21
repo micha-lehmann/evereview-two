@@ -10,10 +10,10 @@ interface MainContract {
 
         fun addReview(review: Review)
 
-        fun addReviews(reviews: Iterable<Review>)
-
         fun removeReview(review: Review)
 
-        fun onViewCreated()
+        fun editReview(review: Review)
+
+        fun onAddPressed()
     }
 }
